@@ -6,6 +6,12 @@ MySQL과 Tomcat, Nginx를 활용하여 웹 서비스를 구성하며,
 
 ---
 
+
+## 📂 JDBC 드라이버 배포
+- `mysql-connector-java-8.0.23.jar` 파일을 PV 경로에 복사해야 합니다.
+- 이후 PVC를 통해 Tomcat Pod의 JDBC 경로(`/usr/local/tomcat/lib`)에 마운트됩니다.
+
+
 ## 🔧 구성 리소스
 
 ### 📁 `db-sec.yml`
@@ -55,9 +61,5 @@ MySQL과 Tomcat, Nginx를 활용하여 웹 서비스를 구성하며,
 - 외부 트래픽을 Nginx로 라우팅
 
 ---
-
-## 📂 JDBC 드라이버 배포
-- `mysql-connector-java-8.0.23.jar` 파일을 PV 경로에 복사해야 합니다.
-- 이후 PVC를 통해 Tomcat Pod의 JDBC 경로(`/usr/local/tomcat/lib`)에 마운트됩니다.
 
 
