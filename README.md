@@ -12,6 +12,8 @@ MySQL과 Tomcat, Nginx를 활용하여 웹 서비스를 구성하며,
 - 이후 PVC를 통해 Tomcat Pod의 JDBC 경로(`/usr/local/tomcat/lib`)에 마운트됩니다.
 
 
+
+
 ## 🔧 구성 리소스
 
 ### 📁 `db-sec.yml`
