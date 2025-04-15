@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: db-sec
+type: Opaque
+stringData:
+  MYSQL_ROOT_PASSWORD : test123
+  MYSQL_USER: tomuser
+  MYSQL_PASSWORD: test123
+  MYSQL_DATABASE: tomdb

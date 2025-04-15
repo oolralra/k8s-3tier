@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: db-svc
+spec:
+  selector:
+    app: db
+  ports:
+  - port: 3306
+    targetPort: 3306
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: db-dep
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: db
+  template:
+    metadata:
+      name: db-pod
+      labels:
+        app: db
+    spec:
+      containers:
+      - name: db-con
+        image: 61.254.18.30:5000/mysql
+        envFrom:
+        - secretRef:
+            name: db-sec
