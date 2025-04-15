@@ -1,4 +1,4 @@
-# Kubernetes 기반 웹 서비스 구성
+# Kubernetes 기반 웹 3 tier 서비스 구성
 
 MySQL과 Tomcat, Nginx를 활용하여 웹 서비스를 구성하며,  
 `mysql-connector-java-8.0.23.jar` 파일을 Tomcat Pod에 마운트하여 JDBC 연동을 테스트합니다.  
