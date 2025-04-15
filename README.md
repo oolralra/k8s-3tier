@@ -1,6 +1,6 @@
 # Kubernetes 기반 웹 서비스 구성
 
-이 프로젝트는 MySQL과 Tomcat, Nginx를 활용하여 웹 서비스를 구성하며,  
+MySQL과 Tomcat, Nginx를 활용하여 웹 서비스를 구성하며,  
 `mysql-connector-java-8.0.23.jar` 파일을 Tomcat Pod에 마운트하여 JDBC 연동을 테스트합니다.  
 모든 컨테이너 이미지는 사설 저장소(`61.254.18.30:5000`)에서 가져옵니다.
 
@@ -22,7 +22,7 @@
 
 ### 🛠️ `tom-configmap.yml`
 - Tomcat에서 사용할 **ConfigMap**
-- `index.jsp`에 DB 연동 확인용 `dbtest.jsp` 코드 포함
+- `index.jsp`에 DB 연동 확인용 코드 포함
 
 ---
 
@@ -57,9 +57,7 @@
 ---
 
 ## 📂 JDBC 드라이버 배포
-- `mysql-connector-java-8.0.23.jar` 파일을 PV의 지정된 경로에 복사해야 합니다.
+- `mysql-connector-java-8.0.23.jar` 파일을 PV 경로에 복사해야 합니다.
 - 이후 PVC를 통해 Tomcat Pod의 JDBC 경로(`/usr/local/tomcat/lib`)에 마운트됩니다.
 
 ```bash
-# 예시: JDBC 드라이버 파일 복사
-kubectl cp mysql-connector-java-8.0.23.jar <pod-name>:/mnt/path
